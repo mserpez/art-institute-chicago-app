@@ -4,9 +4,10 @@ import React from 'react';
 
 import {SCREENS} from '../constants';
 import {EventDetailScreen, EventsListScreen} from '../screens';
+import {RootStackParamList} from './@types';
 
 // Create a stack navigator.
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 // This is the root navigator. It's used to switch between screens.
 export default function Navigation() {

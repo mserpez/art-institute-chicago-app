@@ -3,7 +3,7 @@ import {ArtServiceEvent, ArtServicePaginatedResponse} from '../@types';
 import {getEvents} from '../api';
 
 export default function useGetEvents() {
-  const query = useQuery<ArtServicePaginatedResponse<ArtServiceEvent[]>>({
+  const query = useQuery<ArtServicePaginatedResponse<ArtServiceEvent>>({
     queryKey: ['events'],
     queryFn: () => getEvents(),
   });
