@@ -2,7 +2,7 @@ const SIZE_VALUE = 8;
 
 const theme = {
   colors: {
-    main: '#2196f3',
+    primary: {main: '#2196f3', dark: '#1565c0', light: '#64b5f6'},
     textPrimary: '#444444',
     textSecondary: '#777777',
   },

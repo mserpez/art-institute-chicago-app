@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Animated, Image, StyleSheet, Text} from 'react-native';
+import {THEME} from '../../../constants';
 
 const HEADER_MAX_HEIGHT = 200;
 const HEADER_MIN_HEIGHT = 80;
@@ -43,8 +44,6 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: 'center',
     alignItems: 'center',
-    left: 0,
-    right: 0,
     position: 'relative',
     width: '100%',
     overflow: 'hidden',
@@ -63,9 +62,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerText: {
-    color: '#fafafa',
+    color: '#ffffff',
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginHorizontal: THEME.unit(2),
   },
 });

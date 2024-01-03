@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     zIndex: 1000,
-    backgroundColor: THEME.colors.main,
+    backgroundColor: THEME.colors.primary.main,
     opacity: 0.85,
     paddingHorizontal: THEME.unit(1),
     borderTopRightRadius: THEME.radius,
