@@ -12,10 +12,11 @@ import {
 interface ContainerProps extends React.PropsWithChildren {
   isLoading?: boolean;
   error?: Error | null;
+  fixedScroll?: boolean;
 }
 
 export default function Container(props: ContainerProps) {
-  const {children, error, isLoading} = props;
+  const {children, error, isLoading, fixedScroll} = props;
 
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -35,6 +36,10 @@ export default function Container(props: ContainerProps) {
     );
   }
 
+  if (fixedScroll) {
+    return <View style={styles.fixedContainer}>{children}</View>;
+  }
+
   return (
     <SafeAreaView>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -50,5 +55,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  fixedContainer: {
+    flex: 1,
   },
 });

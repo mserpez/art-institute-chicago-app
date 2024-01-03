@@ -1,11 +1,11 @@
 import {useQuery} from '@tanstack/react-query';
-import {ArtServiceEvent, ArtServicePaginatedResponse} from '../@types';
-import {getEvents} from '../api';
+import {ArtServiceEvent, ArtServicePaginatedResponse} from '../service/@types';
+import {getEvents} from '../service/api';
 
 export default function useGetEvents() {
   const query = useQuery<ArtServicePaginatedResponse<ArtServiceEvent>>({
     queryKey: ['events'],
-    queryFn: () => getEvents(),
+    queryFn: () => getEvents(1, 20),
   });
 
   return {

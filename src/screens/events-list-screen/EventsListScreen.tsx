@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Container} from '../../components';
-import {useGetEvents} from '../../services/art-service';
+import {useGetEvents} from '../../hooks';
 import {Card} from './components';
 
 export default function EventsListScreen() {
