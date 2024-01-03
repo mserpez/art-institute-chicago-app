@@ -29,10 +29,7 @@ export default function EventDetailScreen() {
               [{nativeEvent: {contentOffset: {y: scrollOffsetY}}}],
               {useNativeDriver: false},
             )}>
-            <Body
-              description={data.description}
-              shortDescription={data.short_description}
-            />
+            <Body event={data} />
           </ScrollView>
         </SafeAreaView>
       )}

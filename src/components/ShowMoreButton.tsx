@@ -2,11 +2,20 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {THEME} from '../constants';
 
-export default function ReadMoreButton() {
+interface ReadMoreButtonProps {
+  onPress: () => void;
+  isShowingMore: boolean;
+}
+
+export default function ReadMoreButton(props: ReadMoreButtonProps) {
+  const {onPress, isShowingMore} = props;
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <Text style={styles.text}>Read More</Text>
+        <Text style={styles.text}>
+          {isShowingMore ? 'Show Less' : 'Show More'}
+        </Text>
       </View>
     </TouchableOpacity>
   );

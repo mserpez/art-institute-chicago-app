@@ -22,9 +22,11 @@ export default function Card(props: CardProps) {
   return (
     <TouchableOpacity onPress={navigateToDetailsHandler}>
       <View style={styles.container}>
-        {event.is_free && (
+        {(event.is_free || event.is_sold_out) && (
           <View style={styles.containerFree}>
-            <Text style={styles.textFree}>Free</Text>
+            <Text style={styles.textTag}>
+              {event.is_sold_out ? 'Sold out' : 'Free'}
+            </Text>
           </View>
         )}
         <Image style={styles.image} source={{uri: event.image_url}} />
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: THEME.unit(1),
     borderTopRightRadius: THEME.radius,
   },
-  textFree: {
+  textTag: {
     color: 'white',
     fontSize: 12,
     textTransform: 'uppercase',

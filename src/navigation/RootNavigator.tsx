@@ -14,10 +14,15 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={SCREENS.EVENTS_LIST}>
-        <Stack.Screen name={SCREENS.EVENTS_LIST} component={EventsListScreen} />
+        <Stack.Screen
+          name={SCREENS.EVENTS_LIST}
+          component={EventsListScreen}
+          options={{title: 'Events List'}}
+        />
         <Stack.Screen
           name={SCREENS.EVENT_DETAIL}
           component={EventDetailScreen}
+          options={{title: 'Event Detail'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
