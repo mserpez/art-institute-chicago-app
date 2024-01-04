@@ -1,9 +1,16 @@
 import {useRoute} from '@react-navigation/native';
 import React, {useRef} from 'react';
-import {Animated, SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {
+  Animated,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import {Container} from '../../components';
+import {THEME} from '../../constants';
 import {useGetEventDetail} from '../../hooks';
-import {Body} from './components';
+import {AboutSection, BuyTicketsSection, InfoSection} from './components';
 import DynamicHeader from './components/Header';
 
 export default function EventDetailScreen() {
@@ -29,7 +36,11 @@ export default function EventDetailScreen() {
               [{nativeEvent: {contentOffset: {y: scrollOffsetY}}}],
               {useNativeDriver: false},
             )}>
-            <Body event={data} />
+            <View style={styles.bodyContainer}>
+              <InfoSection event={data} />
+              <AboutSection event={data} />
+              <BuyTicketsSection event={data} />
+            </View>
           </ScrollView>
         </SafeAreaView>
       )}
@@ -42,6 +53,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 10,
     margin: 0,
+  },
+  bodyContainer: {
+    paddingBottom: THEME.unit(1),
+    padding: THEME.unit(1),
+    backgroundColor: '#ffffff',
   },
   scrollText: {
     fontSize: 19,
